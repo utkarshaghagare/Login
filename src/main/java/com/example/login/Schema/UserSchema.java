@@ -20,8 +20,6 @@ public class UserSchema {
         return password;
     }
 
-
-
 }
 
 

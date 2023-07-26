@@ -20,11 +20,21 @@ public class UserController {
     public String login(){
         return "login";
     }
+    @GetMapping("/Signup")
+    public String Signup(){
+        return "Signup";
+    }
 @Autowired
 public UserService userService;
 
     @PostMapping("/login")
     public String pass(@RequestParam("username") String username,
+                       @RequestParam("password") String password){
+
+        return userService.checkUser(username, password);
+    }
+    @PostMapping("/Signup")
+    public String newUser(@RequestParam("username") String username,
                        @RequestParam("password") String password){
 
         return userService.saveUser(username, password);

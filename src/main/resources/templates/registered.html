@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Failed Logging In</title>
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Successfully Logged In</title>
+  <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f7f7f7;
@@ -47,20 +47,19 @@
         }
     </style>
 </head>
-<body th:action="@{/Signup}" method="get">
+<body>
 <div class="popup">
-    <h2>Failed Logging In</h2>
-    <p>Wrong username or Password.</p>
-    <button class="close-btn" onclick="closePopup()" >Sign Up with Us Here !/button>
+  <h2>Successfully Signed In</h2>
+  <p>Welcome ! You are now Signed in.</p>
+  <button class="close-btn" onclick="closePopup()">Login here </button>
 </div>
 
-<script >
+<script>
         function closePopup() {
             // Hide the popup when the close button is clicked
             const popup = document.querySelector('.popup');
-            //popup.style.display = 'none';
-            //th:action="@{/Signup}" method="get";
-            window.location.href = '/Signup'
+            popup.style.display = 'none';
+            window.location.href = '/login';
         }
     </script>
 </body>

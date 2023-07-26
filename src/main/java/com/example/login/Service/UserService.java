@@ -15,10 +15,9 @@ public class UserService {
     public UserRepositary userRepositary;
 
 
-    public String saveUser(String username_req, String password_req) {
+    public String checkUser(String username_req, String password_req) {
 
        // DisplayOp op = new DisplayOp();
-
 //          String username_req = user_req.getUser_name();
 //          String password_req = user_req.getPassword();
 
@@ -26,7 +25,6 @@ public class UserService {
 
         if (user ==null) {
             return "NotFound";
-
         }
         else{
             if (user.getPassword().equals(password_req)) {
@@ -36,4 +34,12 @@ public class UserService {
             }
         }
     }
+    public String saveUser(String username_req, String password_req){
+        User user = new User();
+        user.setUsername(username_req);
+        user.setPassword(password_req);
+        userRepositary.save(user);
+        return "registered";
+    }
+
 }
